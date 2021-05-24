@@ -40,19 +40,17 @@ orgButton_glow = Button(frame, text="organizing handwriting", command=lambda: cr
 orgButton_grow = Button(frame, text="organizing handwriting", command=lambda: create_grow("organizing handwriting"))
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
-
-# orgButton_grow.cget('text')
-
 # Pack interface buttons/text boxes
-inputtxt.pack()
-nameButton.pack(side=TOP)
+inputtxt.grid(row=0, column=0)
+nameButton.grid(row=1, column=0)
 
-citeButton_glow.pack(side=LEFT)
-citeButton_grow.pack(side=LEFT)
-orgButton_grow.pack(side=RIGHT)
-orgButton_glow.pack(side=RIGHT)
+citeButton_glow.grid(row=1, column=1)
+citeButton_grow.grid(row=2, column=1)
+orgButton_glow.grid(row=1, column=2)
+orgButton_grow.grid(row=2, column=2)
 
-commentButton.pack(padx=10, side=LEFT)
+
+commentButton.grid(row=1, column=4)
 
 # Run the application.
 frame.mainloop()
