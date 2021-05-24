@@ -1,4 +1,3 @@
-import keyword
 from random import *
 from tkinter import *
 from corpus import *
@@ -12,12 +11,11 @@ def define_name():
 
 def create_glow(text):
     global glow
-    glow = choice(dict[orgButton_grow.cget('text')])
+    glow = choice(dict[text])
 
 
 def create_grow(text):
     global grow
-    text = orgButton_grow.cget('text')
     grow = choice(dict[text])
 
 
@@ -28,8 +26,6 @@ def generate_comment():
     print(final_com)
 
 
-global name
-
 # Top level parent window
 frame = Tk()
 frame.title("TextBox Input")
@@ -37,16 +33,15 @@ frame.geometry('700x150')
 
 # Define interface buttons/text boxes
 inputtxt = Text(frame, height=2, width=7)
-nameButton = Button(frame, text="Input Name", command=create_grow)
-orgButton_glow = Button(frame, text="organizing handwriting", command=create_glow)
-orgButton_grow = Button(frame, text="organizing handwriting", command=create_grow)
-citeButton_glow = Button(frame, text="citing evidence", command=create_glow)
-citeButton_grow = Button(frame, text="citing evidence", command=create_grow)
+nameButton = Button(frame, text="Input Name", command=define_name)
+citeButton_glow = Button(frame, text="citing evidence", command=lambda: create_glow("citing evidence"))
+citeButton_grow = Button(frame, text="citing evidence", command=lambda: create_grow("citing evidence"))
+orgButton_glow = Button(frame, text="organizing handwriting", command=lambda: create_glow("organizing handwriting"))
+orgButton_grow = Button(frame, text="organizing handwriting", command=lambda: create_grow("organizing handwriting"))
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
-# orgButton_grow.invoke()
 
-orgButton_grow.cget('text')
+# orgButton_grow.cget('text')
 
 # Pack interface buttons/text boxes
 inputtxt.pack()
