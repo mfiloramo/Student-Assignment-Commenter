@@ -29,7 +29,7 @@ def generate_comment():
 # Top level parent window
 frame = Tk()
 frame.title("TextBox Input")
-frame.geometry('700x150')
+frame.geometry('400x200')
 
 # Define interface buttons/text boxes
 inputtxt = Text(frame, height=2, width=7)
@@ -41,16 +41,16 @@ orgButton_grow = Button(frame, text="organizing handwriting", command=lambda: cr
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
 # Pack interface buttons/text boxes
-inputtxt.grid(row=0, column=0)
-nameButton.grid(row=1, column=0)
+inputtxt.grid(row=0, column=2)
+nameButton.grid(row=1, column=2)
 
-citeButton_glow.grid(row=1, column=1)
-citeButton_grow.grid(row=2, column=1)
-orgButton_glow.grid(row=1, column=2)
-orgButton_grow.grid(row=2, column=2)
+citeButton_glow.grid(row=3, column=1, padx=10, pady=10)
+citeButton_grow.grid(row=4, column=1)
+orgButton_glow.grid(row=3, column=2)
+orgButton_grow.grid(row=4, column=2)
 
 
-commentButton.grid(row=1, column=4)
+commentButton.grid(row=5, column=2, pady=10)
 
 # Run the application.
 frame.mainloop()
@@ -63,3 +63,5 @@ frame.mainloop()
 # TODO: Create text output for copying and pasting.
 
 # TODO: Incorporate functionality with the Google Classroom API.
+
+# TODO: Create an executable of the application with API functionality.
