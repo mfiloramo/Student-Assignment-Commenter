@@ -22,29 +22,25 @@ def create_grow():
 def generate_comment():
     global final_com
     final_com = f'{name}, {choice(glows)} {glow}. {choice(grows_pre)}, {choice(grows_effort)} {grow}.'
-    copy(final_com)
-    # print(final_com)
+    # copy(final_com)
+    print(final_com)
 
 
 # Top level parent window
 frame = Tk()
 frame.title("TextBox Input")
-frame.geometry('200x150')
+frame.geometry('400x150')
 
-# TextBox Creation
+# Define interface buttons/text boxes
 inputtxt = Text(frame, height=2, width=7)
-inputtxt.pack()
-
-# Define Name Button
 nameButton = Button(frame, text="Input Name", command=define_name)
-nameButton.pack()
-
-# Define interface buttons
 glowButton = Button(frame, text="Citing Evidence", command=create_glow)
 growButton = Button(frame, text="Organizing Handwriting", command=create_grow)
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
-# Pack interface buttons
+# Pack interface buttons/text boxes
+inputtxt.pack()
+nameButton.pack()
 glowButton.pack(side=LEFT)
 growButton.pack(side=LEFT)
 commentButton.pack(side=LEFT)
