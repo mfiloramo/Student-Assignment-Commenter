@@ -39,16 +39,14 @@ inputtxt.pack()
 nameButton = Button(frame, text="Input Name", command=define_name)
 nameButton.pack()
 
-# Define Glow Button
-glowButton = Button(frame, text="Test Glow", command=create_glow)
-glowButton.pack(side=LEFT)
-
-# Define Grow Button
-growButton = Button(frame, text="Test Grow", command=create_grow)
-growButton.pack(side=LEFT)
-
-# Define Generate Comment Button
+# Define interface buttons
+glowButton = Button(frame, text="Citing Evidence", command=create_glow)
+growButton = Button(frame, text="Organizing Handwriting", command=create_grow)
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
+
+# Pack interface buttons
+glowButton.pack(side=LEFT)
+growButton.pack(side=LEFT)
 commentButton.pack(side=LEFT)
 
 # Run the application.
@@ -57,7 +55,7 @@ frame.mainloop()
 
 # TODO: Format GUI with name input on top; glows packed beneath; grows packed beneath.
 
-# TODO: Build dictionaries and lists.
+# TODO: Build corpus.
 
 # TODO: Create text output for copying and pasting.
 
