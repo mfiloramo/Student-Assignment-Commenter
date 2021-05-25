@@ -2,6 +2,7 @@ from random import *
 from tkinter import *
 from corpus import *
 from pyperclip import *
+from itertools import *
 from pprint import *
 
 
@@ -40,16 +41,15 @@ glow_dict = {}
 grow_dict = {}
 
 for a, b in zip(skills_dict.keys(), range(1, 17)):
-    glow_dict[b] = Button(frame, text=a, command=lambda: create_glow(b))
-    grow_dict[b] = Button(frame, text=a, command=lambda: create_grow(b))
+    glow_dict[b] = Button(frame, text=a, command=lambda: create_glow(a))
+    grow_dict[b] = Button(frame, text=a, command=lambda: create_grow(a))
 
 # Position the buttons within the GUI.
-list_rows = (1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4)
-list_cols = (1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4)
+grid_coors = list(product('1234', repeat=2))
 
-for w, x, y, z in zip(glow_dict.values(), grow_dict.values(), list_rows, list_cols):
-    w.grid(row=y, column=z)
-    x.grid(row=y+8, column=z)
+for w, x, y in zip(glow_dict.values(), grow_dict.values(), grid_coors):
+    w.grid(row=int(y[0]), column=y[1])
+    x.grid(row=int(y[0])+8, column=y[1])
 
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
