@@ -14,11 +14,13 @@ def define_name():
 def create_glow(text):
     global glow
     glow = choice(skills_dict[text])
+    return glow
 
 
 def create_grow(text):
     global grow
     grow = choice(skills_dict[text])
+    return grow
 
 
 def generate_comment():
@@ -40,15 +42,18 @@ nameButton = Button(frame, text="Input Name", command=define_name)
 glow_dict = {}
 grow_dict = {}
 
-for a, b in zip(skills_dict.keys(), range(1, 17)):
-    glow_dict[b] = Button(frame, text=a, command=lambda: create_glow(a))
-    grow_dict[b] = Button(frame, text=a, command=lambda: create_grow(a))
+for a in skills_dict.keys():
+    glow_dict[a] = Button(frame, text=a, command=lambda: create_glow(a))
+    grow_dict[a] = Button(frame, text=a, command=lambda: create_grow(a))
 
-# Position the buttons within the GUI.
+# for k, v in grow_dict.items():
+#     print(k, v.cget('command'))
+
+# Iteratively position the buttons within the GUI.
 grid_coors = list(product('1234', repeat=2))
 
 for w, x, y in zip(glow_dict.values(), grow_dict.values(), grid_coors):
-    w.grid(row=int(y[0]), column=y[1])
+    w.grid(row=int(y[0])+1, column=y[1])
     x.grid(row=int(y[0])+8, column=y[1])
 
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
@@ -58,15 +63,15 @@ inputtxt.grid(row=0, column=2)
 nameButton.grid(row=0, column=3)
 
 # Grid-align Glow Section label.
-# glowLabel = Label(frame, text="Glows")
-# glowLabel.grid(row=4, column=3, pady=10)
+glowLabel = Label(frame, text="Glows")
+glowLabel.grid(row=1, column=3, pady=10)
 
 # Grid-align "Grow" section label
-# growLabel = Label(frame, text="Grows")
-# growLabel.grid(row=6, column=3, pady=10)
+growLabel = Label(frame, text="Grows")
+growLabel.grid(row=6, column=3, pady=10)
 
 # Grid-align generate_comment button.
-commentButton.grid(row=14, column=2, pady=10)
+commentButton.grid(row=14, column=3, pady=35)
 
 # Run the application.
 frame.mainloop()
@@ -82,4 +87,4 @@ frame.mainloop()
 
 # TODO: Incorporate functionality with the Google Classroom API.
 
-# TODO: Create an executable of the application with API functionality.
+# TODO: Create an executable of the application with (or without) API functionality.
