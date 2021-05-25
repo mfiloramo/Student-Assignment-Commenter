@@ -1,4 +1,4 @@
-# Dictionaries and lists.
+# Define corpus words lists and dictionaries.
 glows_pre = [
     'excellent work', 'fantastic job', 'great job', 'wonderful job', 'great effort', 'astounding work',
     'awesome job', 'nice work', 'terrific job', 'amazing job',
@@ -17,7 +17,7 @@ grows_effort = [
 ]
 
 # Each key will be associated with a choice within a GUI.
-dict = {
+skills_dict = {
     'Being Creative': ['producing creative and original ideas in your work'],
     'Choosing Strong Evidence': ['selecting accurate and relevant text evidence to support writing'],
     'Citing Evidence': ['citing evidence from the text', 'citing text evidence', 'using text evidence'],
