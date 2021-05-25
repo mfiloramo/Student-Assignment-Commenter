@@ -13,7 +13,7 @@ grows_pre = [
 grows_effort = [
     'try to work on', 'try paying more attention to', 'consider how you could improve',
     'think about how you could work on', 'consider practicing', 'try to improve your skill of',
-    'think os some ways you could improve', 'think about how your writing would be different if you could improve',
+    'think of some ways you could improve', 'think about how your writing would be different if you could improve',
 ]
 
 # Each key will be associated with a choice within a GUI.

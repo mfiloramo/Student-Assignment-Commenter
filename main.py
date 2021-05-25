@@ -40,8 +40,8 @@ glow_dict = {}
 grow_dict = {}
 
 for a, b in zip(skills_dict.keys(), range(1, 17)):
-    glow_dict[b] = Button(frame, text=a, command=lambda: create_glow(a))
-    grow_dict[b] = Button(frame, text=a, command=lambda: create_grow(a))
+    glow_dict[b] = Button(frame, text=a, command=lambda: create_glow(b))
+    grow_dict[b] = Button(frame, text=a, command=lambda: create_grow(b))
 
 # Position the buttons within the GUI.
 list_rows = (1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4)
@@ -54,8 +54,8 @@ for w, x, y, z in zip(glow_dict.values(), grow_dict.values(), list_rows, list_co
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
 # Grid-align text input and define_name button.
-inputtxt.grid(row=0, column=3)
-nameButton.grid(row=0, column=4)
+inputtxt.grid(row=0, column=2)
+nameButton.grid(row=0, column=3)
 
 # Grid-align Glow Section label.
 # glowLabel = Label(frame, text="Glows")
