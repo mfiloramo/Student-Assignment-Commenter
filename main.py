@@ -28,7 +28,6 @@ def generate_comment():
     final_com = f'{name}, {choice(glows_pre)} {glow}. {choice(grows_pre)}, {choice(grows_effort)} {grow}.'
     copy(final_com)
     print(final_com)
-    return final_com
 
 
 # Top level parent window
@@ -40,18 +39,17 @@ frame.geometry('600x400')
 inputtxt = Text(frame, height=1, width=15)
 nameButton = Button(frame, text="Input Name", command=define_name)
 
-glow_dict = []
-grow_dict = []
+glow_dict = {}
+grow_dict = {}
 
 for i in skills_dict.keys():
-    glow_dict.append(Button(frame, text=i, command=lambda: create_glow(i)))
-    grow_dict.append(Button(frame, text=i, command=lambda: create_grow(i)))
-
+    glow_dict[i] = Button(frame, text=i, command=lambda i=i: create_glow(i))
+    grow_dict[i] = Button(frame, text=i, command=lambda i=i: create_grow(i))
 
 # Iteratively position the buttons within the GUI.
 grid_coors = product('1234', repeat=2)
 
-for w, x, y in zip(glow_dict, grow_dict, grid_coors):
+for w, x, y in zip(glow_dict.values(), grow_dict.values(), grid_coors):
     w.grid(row=int(y[0])+1, column=y[1])
     x.grid(row=int(y[0])+8, column=y[1])
 
