@@ -73,10 +73,8 @@ commentButton.grid(row=14, column=3, pady=35)
 frame.mainloop()
 
 
-# TODO: Develop corpus.
+# TODO: Further develop corpus.
 
 # TODO: Reorganize file structure.
 
 # TODO: Incorporate functionality with the Google Classroom API.
-
-# TODO: Create an executable of the application with (or without) API functionality.
