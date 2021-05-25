@@ -27,7 +27,6 @@ def generate_comment():
     global final_com
     final_com = f'{name}, {choice(glows_pre)} {glow}. {choice(grows_pre)}, {choice(grows_effort)} {grow}.'
     copy(final_com)
-    print(final_com)
 
 
 # Top level parent window
@@ -75,10 +74,6 @@ frame.mainloop()
 
 
 # TODO: Develop corpus.
-
-# TODO: Format GUI with name input on top; glows packed beneath; grows packed beneath.
-
-# TODO: Create text output for copying and pasting.
 
 # TODO: Reorganize file structure.
 

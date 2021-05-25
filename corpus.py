@@ -28,7 +28,7 @@ skills_dict = {
     'Explaining Ideas': ['explaining your ideas thoroughly throughout your writing'],
     'Organizing Handwriting': ['making your handwriting organized', 'organizing your handwriting'],
     'Proofreading': ['proofreading your work for errors in spelling and punctuation'],
-    'Providing Background Information': ['providing bi about what you\'re writing'],
+    'Providing Background Information': ['providing background information about what you\'re writing'],
     'Theme': ['stating a relevant and insightful theme'],
     'Transitions': ['adding transitions at the beginning and ends of your paragraphs'],
     'Using R-A-C-E': ['masterfully using the R-A-C-E Strategy throughout your work'],
