@@ -21,7 +21,7 @@ def create_grow(text):
 
 def generate_comment():
     global final_com
-    final_com = f'{name}, {choice(glows)} {glow}. {choice(grows_pre)}, {choice(grows_effort)} {grow}.'
+    final_com = f'{name}, {choice(glows_pre)} {glow}. {choice(grows_pre)}, {choice(grows_effort)} {grow}.'
     copy(final_com)
     print(final_com)
 
@@ -38,6 +38,8 @@ citeButton_glow = Button(frame, text="Citing Evidence", command=lambda: create_g
 citeButton_grow = Button(frame, text="Citing Evidence", command=lambda: create_grow("Citing Evidence"))
 orgButton_glow = Button(frame, text="Organizing Handwriting", command=lambda: create_glow("Organizing Handwriting"))
 orgButton_grow = Button(frame, text="Organizing Handwriting", command=lambda: create_grow("Organizing Handwriting"))
+
+
 commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
 # Grid-align text input and define_name button.
@@ -67,9 +69,9 @@ commentButton.grid(row=8, column=3, pady=10)
 frame.mainloop()
 
 
-# TODO: Format GUI with name input on top; glows packed beneath; grows packed beneath.
-
 # TODO: Develop corpus.
+
+# TODO: Format GUI with name input on top; glows packed beneath; grows packed beneath.
 
 # TODO: Create text output for copying and pasting.
 
