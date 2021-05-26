@@ -44,13 +44,14 @@ label1.place(x=0, y=0)
 # Define interface buttons/text boxes
 inputtxt = Text(frame, height=1, width=15)
 nameButton = Button(frame, text="Input Name", command=define_name)
+commentButton = Button(frame, background='#296dff', text="Generate Comment", command=generate_comment)
 
 glow_dict = {}
 grow_dict = {}
 
 for i in skills_dict.keys():
-    glow_dict[i] = Button(frame, text=i, command=lambda i=i: create_glow(i))
-    grow_dict[i] = Button(frame, text=i, command=lambda i=i: create_grow(i))
+    glow_dict[i] = Button(frame, background='#46ff29', text=i, command=lambda i=i: create_glow(i))
+    grow_dict[i] = Button(frame, background='red', text=i, command=lambda i=i: create_grow(i))
 
 # Iteratively position the buttons within the GUI.
 grid_coors = product('1234', repeat=2)
@@ -58,8 +59,6 @@ grid_coors = product('1234', repeat=2)
 for w, x, y in zip(glow_dict.values(), grow_dict.values(), grid_coors):
     w.grid(row=int(y[0])+1, column=y[1])
     x.grid(row=int(y[0])+8, column=y[1])
-
-commentButton = Button(frame, text="Generate Comment", command=generate_comment)
 
 # Grid-align text input and define_name button.
 inputtxt.grid(row=0, column=2)
