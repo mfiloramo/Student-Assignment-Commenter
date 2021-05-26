@@ -3,7 +3,7 @@ from tkinter import *
 from corpus import *
 from pyperclip import *
 from itertools import *
-from pprint import *
+from PIL import Image, ImageTk
 
 
 def define_name():
@@ -33,6 +33,13 @@ def generate_comment():
 frame = Tk()
 frame.title("Assignment Commenter")
 frame.geometry('600x400')
+
+# Add a background image to the parent Widget.
+image1 = Image.open('image.jpg')
+image = ImageTk.PhotoImage(image1)
+label1 = Label(image=image)
+label1.image = image
+label1.place(x=0, y=0)
 
 # Define interface buttons/text boxes
 inputtxt = Text(frame, height=1, width=15)
@@ -73,8 +80,6 @@ commentButton.grid(row=14, column=3, pady=35)
 frame.mainloop()
 
 
-# TODO: Further develop corpus.
-
-# TODO: Reorganize file structure.
+# TODO: Reorganize file structure (consider making the application a class, where each instance is based on ass. type.
 
 # TODO: Incorporate functionality with the Google Classroom API.
