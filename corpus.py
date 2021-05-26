@@ -46,7 +46,7 @@ skills_dict = {
                      'looking over your paper for errors in grammar, spelling and punctuation'],
     'Providing Background Information': ['providing background information about what you\'re writing',
                                          'providing the reader with relevant background information',
-                                         'supporting your writinng with useful background information'],
+                                         'supporting your writing with useful background information'],
     'Theme': ['stating a relevant and insightful theme', 'developing and stating a theme in your writing',
               'pointing out a relevant theme and explaining it to the reader'],
     'Transitions': ['adding transitions at the beginning and ends of your paragraphs',
