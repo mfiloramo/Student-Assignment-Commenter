@@ -2,7 +2,7 @@ from random import *
 from tkinter import *
 from corpus import *
 from pyperclip import *
-from itertools import *
+from itertools import product
 from PIL import Image, ImageTk
 
 
@@ -25,7 +25,7 @@ def create_grow(text):
 
 def generate_comment():
     global final_com
-    final_com = f'{name}, {choice(glows_pre)} {glow}. {choice(grows_pre)}, {choice(grows_effort)} {grow}.'
+    final_com = f'{name}, {choice(glows_pre)} {glow}. \n\n{choice(grows_pre)}, {choice(grows_effort)} {grow}.'
     copy(final_com)
 
 
@@ -81,4 +81,4 @@ frame.mainloop()
 
 # TODO: Reorganize file structure (consider making the application a class, where each instance is based on ass. type.
 
-# TODO: Incorporate functionality with the Google Classroom API.
+# TODO: Build tests.
